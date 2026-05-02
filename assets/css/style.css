@@ -1,0 +1,548 @@
+:root {
+    --excel-green: #1d6f42;
+    --excel-green-dark: #185a36;
+    --excel-green-light: #21a366;
+    --excel-bg: #f7faf8;
+    --text-dark: #1f2d3d;
+    --border-soft: #e7eaee;
+}
+
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    color: var(--text-dark);
+    background: #ffffff;
+    line-height: 1.65;
+}
+
+/* Bootstrap success color override to Excel green */
+.btn-success {
+    background-color: var(--excel-green);
+    border-color: var(--excel-green);
+}
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--excel-green-dark);
+    border-color: var(--excel-green-dark);
+}
+.btn-outline-success {
+    color: var(--excel-green);
+    border-color: var(--excel-green);
+}
+.btn-outline-success:hover {
+    background-color: var(--excel-green);
+    border-color: var(--excel-green);
+}
+.text-success {
+    color: var(--excel-green) !important;
+}
+.bg-success-subtle {
+    background-color: #e8f5ee !important;
+}
+.text-success-emphasis {
+    color: var(--excel-green-dark) !important;
+}
+
+/* Navbar */
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+.navbar-brand {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+}
+.brand-icon {
+    display: inline-block;
+    transform: translateY(-1px);
+    margin-right: 4px;
+}
+.nav-link {
+    color: #4a5568;
+    font-weight: 500;
+    margin: 0 0.4rem;
+    transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: var(--excel-green);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #f0f9f3 0%, #ffffff 60%);
+    padding: 5rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(33, 163, 102, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.hero h1 {
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+.hero .lead {
+    font-size: 1.15rem;
+    max-width: 540px;
+}
+
+.stats-row {
+    max-width: 480px;
+}
+.stat-card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+.stat-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--excel-green);
+    line-height: 1.1;
+}
+.stat-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.15rem;
+}
+
+/* Hero card (Excel mockup) */
+.hero-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+.hero-card:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+.hero-card-header {
+    background: #f1f3f5;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border-soft);
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.hero-card-body {
+    padding: 0;
+}
+.hero-table {
+    width: 100%;
+    font-size: 0.9rem;
+    border-collapse: collapse;
+}
+.hero-table th,
+.hero-table td {
+    border: 1px solid var(--border-soft);
+    padding: 0.5rem 0.75rem;
+}
+.hero-table thead th {
+    background: var(--excel-green);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+.hero-table thead th:first-child {
+    background: #f1f3f5;
+    color: #6c757d;
+    width: 38px;
+}
+.hero-table tbody td:first-child {
+    background: #f1f3f5;
+    color: #6c757d;
+    text-align: center;
+    font-weight: 500;
+    width: 38px;
+}
+.formula-row td {
+    background: #fff8e1;
+    color: var(--excel-green-dark);
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+.section-light {
+    background: var(--excel-bg);
+}
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* Feature cards */
+.feature-card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 2rem;
+    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
+}
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+.feature-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Check list */
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.check-list li {
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+}
+
+/* Program preview */
+.program-preview {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+.program-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+.program-item + .program-item {
+    border-top: 1px solid var(--border-soft);
+}
+.program-item:hover {
+    background: var(--excel-bg);
+}
+.program-num {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--excel-green) 0%, var(--excel-green-light) 100%);
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.program-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+.program-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Step cards */
+.step-card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.2s;
+}
+.step-card:hover {
+    transform: translateY(-3px);
+}
+.step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--excel-green);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* CTA card */
+.cta-card {
+    background: linear-gradient(135deg, var(--excel-green) 0%, var(--excel-green-light) 100%);
+    border-radius: 20px;
+    padding: 3.5rem;
+    box-shadow: 0 25px 50px -12px rgba(29, 111, 66, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #fafbfc;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--border-soft);
+}
+
+/* ------- Lessons page ------- */
+.lessons-page {
+    background: var(--excel-bg);
+}
+
+.lessons-hero {
+    background: #fff;
+    padding: 2.5rem 0 2rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+.lessons-hero h1 {
+    letter-spacing: -0.5px;
+}
+.breadcrumb {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+.breadcrumb a {
+    color: var(--excel-green);
+    text-decoration: none;
+}
+
+/* Lesson card */
+.lesson-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.lesson-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+}
+.lesson-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+    display: block;
+    text-decoration: none;
+}
+.lesson-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.lesson-card:hover .lesson-thumb img {
+    transform: scale(1.05);
+}
+.lesson-thumb-intro {
+    background: linear-gradient(135deg, var(--excel-green) 0%, var(--excel-green-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.lesson-num {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+.lesson-thumb-intro .lesson-num {
+    background: rgba(255, 255, 255, 0.2);
+}
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.play-overlay i {
+    font-size: 3.5rem;
+    color: #fff;
+    background: var(--excel-green);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transform: scale(0.85);
+    transition: transform 0.25s ease;
+}
+.lesson-card:hover .play-overlay {
+    opacity: 1;
+}
+.lesson-card:hover .play-overlay i {
+    transform: scale(1);
+}
+
+.lesson-body {
+    padding: 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.lesson-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.65rem;
+}
+.lesson-meta .badge {
+    font-weight: 600;
+    padding: 0.4rem 0.65rem;
+}
+.lesson-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+.lesson-desc {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+.lesson-actions {
+    display: flex;
+    gap: 6px;
+    align-items: stretch;
+}
+.lesson-actions .btn {
+    font-weight: 500;
+}
+.lesson-actions .btn-outline-secondary {
+    border-color: var(--border-soft);
+    color: #495057;
+}
+.lesson-actions .btn-outline-secondary:hover {
+    background: var(--excel-bg);
+    color: var(--excel-green);
+    border-color: var(--excel-green);
+}
+
+.lesson-card.no-video .lesson-thumb {
+    cursor: default;
+}
+
+/* Legend */
+.legend-card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+.legend-card .btn.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+    .hero {
+        padding: 3rem 0 4rem;
+        text-align: center;
+    }
+    .hero .stats-row {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero .lead {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero .d-flex {
+        justify-content: center;
+    }
+    .section-title {
+        font-size: 1.85rem;
+    }
+    .cta-card {
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+    .stat-num {
+        font-size: 1.4rem;
+    }
+}
